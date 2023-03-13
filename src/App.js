@@ -5,14 +5,13 @@ function App() {
   const [books, setBooks] = useState([]);
 
   const createBook = (title) => {
-    // BAD CODE!
-    books.push({ id: 123, title: title });
-    console.log(books);
-    setBooks(books);
+    const updatedBooks = [...books, { id: 123 }];
+    setBooks(updatedBooks);
   };
 
   return (
     <div>
+      {books.length}
       <BookCreate onCreate={createBook} />
     </div>
   );
